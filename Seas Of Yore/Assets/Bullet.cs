@@ -5,6 +5,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public float speed = 20;
+    public float bulletDamage = 1;
     private float bulletDeathDelay = 1.5f;
 
     void Update()
@@ -15,6 +16,16 @@ public class Bullet : MonoBehaviour
 
         if(bulletDeathDelay <= 0)
         {
+            Destroy(gameObject);
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        var _enemy = collision.gameObject.GetComponent<Enemy>();
+
+        if (collision.gameObject.tag == "Enemy")
+        {
+            _enemy.TakeDamage(bulletDamage);
             Destroy(gameObject);
         }
     }
