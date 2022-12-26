@@ -16,6 +16,17 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 velocity;
     private float zRotationVelocity;
 
+    private PlayerStats _playerStats;
+
+    private void Awake()
+    {
+        _playerStats = GetComponent<PlayerStats>();
+    }
+    private void Start()
+    {
+        maxSpeed = _playerStats.moveSpeed;
+        verticalInputAcceleration = maxSpeed / 10;
+    }
     private void Update()
     {
         // apply forward input
@@ -44,5 +55,10 @@ public class PlayerMovement : MonoBehaviour
         // update transform
         transform.position += velocity * Time.deltaTime;
         transform.Rotate(0, 0, zRotationVelocity * Time.deltaTime);
+    }
+    public void UpdateMoveSpeed()
+    {
+        maxSpeed = _playerStats.moveSpeed;
+        verticalInputAcceleration = maxSpeed / 10;
     }
 }

@@ -1263,6 +1263,7 @@ GameObject:
   - component: {fileID: 7652532044088630871}
   - component: {fileID: 7652532044088630952}
   - component: {fileID: 7652532044088630868}
+  - component: {fileID: -4578767648366311595}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -1338,7 +1339,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   verticalInputAcceleration: 2.5
   horizontalInputAcceleration: 25
-  maxSpeed: 20
+  maxSpeed: 25
   maxRotationSpeed: 100
   velocityDrag: 1
   rotationDrag: 1
@@ -1356,6 +1357,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _bulletPrefab: {fileID: 6218379347696361324, guid: 482d2587c1ced5a488e7650cef47c615, type: 3}
   _bulletLauncher: {fileID: 7652532044110888204}
+--- !u!114 &-4578767648366311595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7652532044088630953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea6800c6493ecf148b11e27952082490, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 25
+  moveSpeedMultiplier: 0
+  attackSpeed: 10
+  attackSpeedMultiplier: 0
+  attackDamage: 5
+  attackDamageMultiplier: 0
+  attackRange: 1
+  attackRangeMultiplier: 0
+  critChance: 1
+  critChanceMultiplier: 0
+  critDamage: 1
+  critDamageMultiplier: 0
+  healthAmount: 100
+  healthAmountMultiplier: 0
+  defenceAmount: 5
+  defenceAmountMultiplier: 0
 --- !u!1 &7652532044110888204
 GameObject:
   m_ObjectHideFlags: 0

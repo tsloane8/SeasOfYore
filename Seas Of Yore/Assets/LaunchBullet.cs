@@ -6,16 +6,28 @@ public class LaunchBullet : MonoBehaviour
 {
     public GameObject _bulletPrefab;
     public GameObject _bulletLauncher;
-    private float bulletDelay = 2f;
+    private float startCountdown = 2f;
+    private float countdown;
 
+    private PlayerStats _playerStats;
+
+    private void Awake()
+    {
+        _playerStats = GetComponent<PlayerStats>();
+        startCountdown = startCountdown - _playerStats.attackSpeedMultiplier;
+        countdown = startCountdown;
+    }
     // Update is called once per frame
     void Update()
     {
-        bulletDelay -= Time.deltaTime;
-        if(bulletDelay <= 0)
+        countdown -= Time.deltaTime;
+        Debug.Log(countdown);
+
+        if(countdown <= 0)
         {
             Shoot();
-            bulletDelay = 2f;
+            countdown = startCountdown;
+            Debug.Log(countdown);
         }
     }
 
